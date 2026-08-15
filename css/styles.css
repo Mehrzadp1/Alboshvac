@@ -189,12 +189,11 @@ header.site-header {
 
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 21px; color: var(--color-primary); }
 .logo .mark {
-  width: 42px; height: 42px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  width: 46px; height: 46px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
-.logo .mark svg { width: 24px; height: 24px; color: #fff; }
+.logo .mark img { width: 100%; height: 100%; object-fit: contain; }
 .logo small { display: block; font-family: var(--font-body); font-weight: 500; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-fg-muted); }
 
 .main-nav { display: flex; align-items: center; gap: 8px; }
@@ -234,8 +233,7 @@ header.site-header {
 @media (max-width: 640px) {
   .nav-wrap { padding: 12px 16px; }
   .logo { font-size: 17px; gap: 8px; }
-  .logo .mark { width: 36px; height: 36px; }
-  .logo .mark svg { width: 20px; height: 20px; }
+  .logo .mark { width: 38px; height: 38px; }
   .logo small { display: none; }
   .phone-pill { display: none; }
   .header-actions { gap: 8px; }
@@ -275,8 +273,19 @@ header.site-header {
 }
 .hero-badge svg { width: 16px; height: 16px; color: var(--color-accent-light); }
 
-/* Hero visual: animated equipment illustration */
-.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+/* Hero visual: animated equipment illustration + cursor parallax
+   Elements with [data-depth] get their `transform` set continuously by JS
+   (see js/main.js "Hero parallax") in response to mouse position, so they
+   must NOT also carry a CSS animation on `transform` themselves — the two
+   would fight over the same property. The idle "floaty" bob is applied to
+   a nested .chip-bob wrapper instead, keeping it independent of the
+   parallax transform living on the parent .float-chip. */
+.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
+.hero-glow {
+  position: absolute; width: 520px; height: 520px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(14,165,233,.35), rgba(234,88,12,.12) 55%, transparent 72%);
+  filter: blur(30px); z-index: 0;
+}
 .hero-orb {
   width: min(420px, 90%);
   aspect-ratio: 1;
@@ -284,34 +293,42 @@ header.site-header {
   background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.16), rgba(255,255,255,0) 60%), linear-gradient(150deg, rgba(3,105,161,.55), rgba(15,23,42,.15));
   border: 1px solid rgba(255,255,255,.18);
   display: flex; align-items: center; justify-content: center;
-  position: relative;
+  position: relative; z-index: 1;
+  overflow: visible;
 }
-.hero-orb svg.house { width: 54%; height: 54%; color: #fff; opacity: .95; }
+.hero-orb .tech-illustration { width: 78%; height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
+[data-depth] { transform: translate3d(0,0,0); will-change: transform; }
 .float-chip {
   position: absolute;
   background: #fff;
   color: var(--color-primary);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  padding: 12px 16px;
-  display: flex; align-items: center; gap: 10px;
+  padding: 0;
   font-family: var(--font-heading); font-weight: 600; font-size: 13.5px;
-  animation: floaty 5s ease-in-out infinite;
+  z-index: 2;
 }
+.chip-bob { display: flex; align-items: center; gap: 10px; padding: 12px 16px; animation: floaty 5s ease-in-out infinite; }
 .float-chip svg { width: 20px; height: 20px; }
-.float-chip.chip-cool { top: 6%; left: -4%; animation-delay: .2s; }
+.float-chip.chip-cool { top: 6%; left: -4%; }
+.float-chip.chip-cool .chip-bob { animation-delay: .2s; }
 .float-chip.chip-cool svg { color: var(--color-accent-light); }
-.float-chip.chip-heat { bottom: 10%; right: -6%; animation-delay: 1.1s; }
+.float-chip.chip-heat { bottom: 10%; right: -6%; }
+.float-chip.chip-heat .chip-bob { animation-delay: 1.1s; }
 .float-chip.chip-heat svg { color: var(--color-warm); }
-.float-chip.chip-air { top: 48%; left: -12%; animation-delay: 2s; }
+.float-chip.chip-air { top: 48%; left: -12%; }
+.float-chip.chip-air .chip-bob { animation-delay: 2s; }
 .float-chip.chip-air svg { color: var(--color-success); }
 @media (max-width: 640px) {
-  .float-chip { padding: 9px 12px; font-size: 12px; }
+  .chip-bob { padding: 9px 12px; font-size: 12px; }
   .float-chip.chip-cool { left: 0; }
   .float-chip.chip-air { left: 0; }
   .float-chip.chip-heat { right: 0; }
 }
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@media (prefers-reduced-motion: reduce) {
+  .chip-bob { animation: none; }
+}
 
 /* ---------- Trust strip ---------- */
 .trust-strip { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
@@ -328,6 +345,18 @@ header.site-header {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+/* Cursor-follow spotlight — JS (see "Card spotlight" in main.js) sets --mx/--my
+   custom properties to the pointer position on each card; the gradient below
+   just reads them, so there is no per-frame JS work for this effect. */
+.card { position: relative; overflow: hidden; }
+.card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), rgba(3,105,161,.10), transparent 65%);
+  opacity: 0; transition: opacity .35s ease;
+  pointer-events: none;
+}
+.card:hover::before { opacity: 1; }
 
 .icon-badge {
   width: 56px; height: 56px; border-radius: var(--radius-md);
@@ -369,7 +398,17 @@ header.site-header {
 }
 .service-visual.commercial { background: linear-gradient(160deg, #0F172A 0%, #334155 100%); }
 .service-visual svg.big-icon { width: 42%; max-width: 180px; color: rgba(255,255,255,.92); }
-.service-visual::after { content:""; position:absolute; inset:0; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.14), transparent 55%); }
+.service-visual::after { content:""; position:absolute; inset:0; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.14), transparent 55%); z-index: 1; pointer-events: none; }
+/* Photo variant: real job-site photos fill the card edge-to-edge, with the
+   existing gradient (kept as a base layer + a darkening wash) showing
+   through only where the photo doesn't fully cover, and the same soft
+   highlight overlay from ::after on top for visual consistency with the
+   icon-only cards elsewhere on the site. */
+.service-visual.has-photo { padding: 0; }
+.service-visual .visual-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
 
 .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .tag {

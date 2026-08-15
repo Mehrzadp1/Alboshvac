@@ -97,6 +97,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Hero parallax — desktop pointer devices only. Elements tagged [data-depth]
+     drift toward the cursor at different speeds (smaller depth = further away
+     / moves less), giving the hero a layered, "moving with the mouse" feel.
+     Movement is eased with a simple lerp toward a target offset each frame,
+     rather than jumping straight to the pointer position, so it reads as
+     smooth rather than jittery. Skips entirely for touch devices and for
+     people who've asked the OS for reduced motion. */
+  var parallaxRoot = document.querySelector('#heroParallax');
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isFinePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (parallaxRoot && isFinePointer && !prefersReducedMotion) {
+    var depthEls = Array.prototype.slice.call(parallaxRoot.querySelectorAll('[data-depth]'));
+    var targetX = 0, targetY = 0, curX = 0, curY = 0;
+    var raf = null;
+
+    parallaxRoot.addEventListener('mousemove', function (e) {
+      var rect = parallaxRoot.getBoundingClientRect();
+      targetX = (e.clientX - rect.left - rect.width / 2);
+      targetY = (e.clientY - rect.top - rect.height / 2);
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    parallaxRoot.addEventListener('mouseleave', function () {
+      targetX = 0; targetY = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+
+    function tick() {
+      curX += (targetX - curX) * 0.08;
+      curY += (targetY - curY) * 0.08;
+      depthEls.forEach(function (el) {
+        var depth = parseFloat(el.getAttribute('data-depth')) || 0;
+        el.style.transform = 'translate3d(' + (curX * depth).toFixed(1) + 'px, ' + (curY * depth).toFixed(1) + 'px, 0)';
+      });
+      if (Math.abs(targetX - curX) > 0.1 || Math.abs(targetY - curY) > 0.1) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+      }
+    }
+  }
+
+  /* Card spotlight — sets --mx/--my custom properties to the pointer position
+     within each .card on mousemove; the CSS radial-gradient in styles.css
+     reads them, so this is just cheap event-driven property updates, no
+     animation loop needed. Desktop pointer devices only, same as above. */
+  if (isFinePointer && !prefersReducedMotion) {
+    document.querySelectorAll('.card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+      });
+    });
+  }
+
   /* Set active nav link based on current page */
   var path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(function (link) {
