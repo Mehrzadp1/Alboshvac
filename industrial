@@ -1,1 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial & Mission-Critical HVAC Solutions | ALBOS HVAC</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            industrial: {
+              50: '#fffbebe6',
+              500: '#f59e0b',
+              600: '#d97706',
+              accent: '#38bdf8',
+              emerald: '#10b981',
+              dark: '#090d16',
+              card: '#111827',
+              border: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
 
+  <style>
+    /* Custom Industrial Background Patterns & Effects */
+    .industrial-grid-bg {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .card-spotlight {
+      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(245, 158, 11, 0.06), transparent 40%);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion-content.active {
+      max-height: 1000px;
+      transition: max-height 0.5s ease-in-out;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-[#080c14] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- TOP INDUSTRIAL RAPID RESPONSE BAR -->
+  <div class="bg-slate-950 border-b border-slate-800/80 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+          <i class="fa-solid fa-industry text-[10px] mr-1.5 text-amber-500"></i> Heavy Industrial & Process Cooling Division
+        </span>
+        <span class="hidden lg:inline text-slate-400">
+          <i class="fa-solid fa-shield-halved mr-1 text-slate-500"></i> 24/7 Priority Emergency Dispatch | High-Tonnage Systems
+        </span>
+      </div>
+      <div class="flex items-center space-x-6 text-slate-300">
+        <a href="mailto:service@alboshvac.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-amber-500"></i> service@alboshvac.com
+        </a>
+        <a href="tel:14088349131" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-semibold text-white">
+          <i class="fa-solid fa-phone text-amber-500"></i> (408) 834-9131
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVIGATION BAR -->
+  <header class="site-header sticky top-0 z-50 bg-[#080c14]/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white block leading-none">ALBOS <span class="text-amber-500">HVAC</span></span>
+            <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold block mt-1">Industrial Mechanical Engineering</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP HORIZONTAL NAVIGATION LINKS -->
+        <nav class="hidden lg:block">
+          <ul class="flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
+            <li><a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Home</a></li>
+            <li><a href="residential.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Residential</a></li>
+            <li><a href="commercial.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Commercial</a></li>
+            <li><a href="industrial.html" class="px-3 py-2 rounded-lg bg-amber-500/10 text-amber-400 font-semibold border border-amber-500/30">Industrial</a></li>
+            <li><a href="parts.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Parts</a></li>
+            <li><a href="about.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">About</a></li>
+            <li><a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- CTA BUTTON -->
+        <div class="hidden sm:flex items-center space-x-3">
+          <a href="#estimator" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:shadow-amber-500/40 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-calculator"></i> Industrial Sizing Tool
+          </a>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button class="nav-toggle lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div class="main-nav hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6">
+      <div class="flex flex-col space-y-2 mt-2">
+        <a href="index.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Home</a>
+        <a href="residential.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Residential</a>
+        <a href="commercial.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Commercial</a>
+        <a href="industrial.html" class="px-4 py-2.5 rounded-lg bg-amber-500/20 text-amber-400 font-semibold">Industrial</a>
+        <a href="parts.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Parts</a>
+        <a href="about.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">About</a>
+        <a href="contact.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Contact</a>
+        <a href="#estimator" class="mt-2 w-full text-center bg-amber-500 text-slate-950 font-bold py-3 rounded-xl">Request Industrial RFP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH INDUSTRIAL GRID AND BADGES -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 industrial-grid-bg border-b border-slate-800/80">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#080c14] via-[#080c14]/90 to-[#080c14] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-amber-500/40 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-microchip text-amber-500"></i> Mission-Critical & Industrial HVAC
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+            Heavy-Duty Industrial Systems <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">Engineered for Zero Downtime.</span>
+          </h1>
+
+          <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+            ALBOS HVAC delivers industrial-grade mechanical contracting, high-tonnage process chillers, wet scrubbers, industrial boilers, and precision cleanroom environmental controls for manufacturing and processing plants.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#estimator" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.02]">
+              <i class="fa-solid fa-file-contract mr-2"></i> Request Industrial Proposal
+            </a>
+            <a href="tel:18005552526" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base border border-slate-700 transition-all hover:border-amber-500/50">
+              <i class="fa-solid fa-headset mr-2 text-amber-400"></i> Emergency Mechanical Response
+            </a>
+          </div>
+
+          <!-- Feature Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-slate-400 text-xs font-medium">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-amber-400"></i> Heavy Tonnage (up to 1,500+ Tons)
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-amber-400"></i> ISO Cleanroom & Scrubber Specs
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-amber-400"></i> 24/7 On-Site Emergency Dispatch
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Feature Image 1 (Industrial Chillers) -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-slate-900 p-2 border border-slate-800 shadow-2xl group overflow-hidden">
+            <div class="relative h-80 sm:h-96 rounded-xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Industrial HVAC Chiller Plant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              
+              <!-- Overlay Status Widget -->
+              <div class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-md p-4 rounded-xl border border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono uppercase text-amber-400 font-bold"><i class="fa-solid fa-circle text-[8px] mr-1.5 text-emerald-400 animate-pulse"></i> Plant Process Chiller Loop</span>
+                  <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded font-mono">1,200 Ton Load</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-300 font-mono">
+                  <div>Chilled Water Temp: <span class="text-white font-bold">42.0°F</span></div>
+                  <div>Condenser Flow: <span class="text-sky-400 font-bold">3,600 GPM</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METRIC STAT COUNTERS -->
+  <section class="py-12 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-black text-amber-400" data-count="1500" data-suffix="+ Tons">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Chiller Capacity Deployed</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-black text-white" data-count="99" data-suffix=".99%">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Process Uptime SLA</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-black text-amber-400" data-count="180" data-suffix="+">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Heavy Plants Managed</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-black text-white" data-count="1" data-suffix=" Hour">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Critical Dispatch SLA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIZED INDUSTRIAL CAPABILITIES -->
+  <section id="capabilities" class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-950/80 border border-amber-800/50 px-3 py-1 rounded-full">Heavy Mechanical Engineering</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Industrial Mechanical & Process Systems</h2>
+        <p class="text-slate-400 text-base">
+          Engineered solutions built for severe-duty environments, high operating temperatures, hazardous exhaust, and precision cleanrooms.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Capability 1 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Heavy Process Chillers & Towers</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Industrial centrifugal chillers, air-cooled scroll racks, and cooling towers designed for continuous thermal heat loads.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Redundant Dual-Compressor Loops</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Glycol & Process Fluid Heat Exchangers</li>
+          </ul>
+        </div>
+
+        <!-- Capability 2 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-smog"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Industrial Exhaust & Wet Scrubbers</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Corrosion-resistant FRP ductwork, acid gas wet scrubbers, and heavy industrial dust collector systems meeting EPA standards.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Hazardous Fume Hood Extraction</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Explosion-Proof Spark Resistant Fans</li>
+          </ul>
+        </div>
+
+        <!-- Capability 3 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-vial-circle-check"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Cleanroom & Environmental Controls</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            ISO Class 1-8 cleanroom HVAC, constant temperature/humidity control, pressure cascades, and ULPA filtration for pharma and semi.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> ±0.5°F & ±2% RH Precision Tolerance</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Air Isolation & Positive Pressure Loops</li>
+          </ul>
+        </div>
+
+        <!-- Capability 4 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-[#f59e0b] fa-fire-burner"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Industrial Boilers & Thermal Fluid</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            High-pressure steam boilers, hydronic loop boilers, hot oil thermal fluid systems, and waste heat recovery units (WHRU).
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> ASME Boiler Code Certified Retubing</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Low-NOx Burner Upgrades</li>
+          </ul>
+        </div>
+
+        <!-- Capability 5 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Industrial SCADA & Modbus Automation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Full SCADA integration, Programmable Logic Controller (PLC) cabinet wiring, and custom Modbus TCP/IP telemetry monitoring.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Automated Alarm Paging & SMS Triggering</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Predictive Vibration & Bearing Monitoring</li>
+          </ul>
+        </div>
+
+        <!-- Capability 6 -->
+        <div class="card card-spotlight bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">24/7 Heavy Emergency SLA Contracts</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Dedicated mechanical dispatch teams with on-truck replacement parts, temporary chillers, and emergency mobile boiler hookups.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Guaranteed 1-Hour Remote / On-Site SLA</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> On-Demand Temporary Chiller Skids</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAL PROJECT SHOWCASE / PHOTO GALLERY (4 PICTURES) -->
+  <section class="py-20 bg-slate-950 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+        <div>
+          <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-950/80 border border-amber-800/50 px-3 py-1 rounded-full">Engineering Showcase</span>
+          <h2 class="text-3xl font-extrabold text-white mt-3">Featured Industrial Projects</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">Real-world process mechanical implementations across manufacturing, chemical, and healthcare plants.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Image 1 -->
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/40 transition-all group">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Process Chiller Plant Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full">Automotive Plant</span>
+          </div>
+          <div class="p-5 space-y-2">
+            <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">1,200 Ton Central Chiller Plant</h4>
+            <p class="text-xs text-slate-400">Complete retrofit with primary-secondary pumping loops and SCADA telemetry.</p>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/40 transition-all group">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Heavy Manufacturing Ventilation Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full">Heavy Fabrication</span>
+          </div>
+          <div class="p-5 space-y-2">
+            <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">High-Bay Dust & Exhaust Loop</h4>
+            <p class="text-xs text-slate-400">120,000 CFM roof exhaust system with spark arrestors and variable-frequency drives.</p>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/40 transition-all group">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Pharmaceutical Cleanroom HVAC Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full">Pharma Cleanroom</span>
+          </div>
+          <div class="p-5 space-y-2">
+            <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">ISO Class 5 Cleanroom Air System</h4>
+            <p class="text-xs text-slate-400">Constant humidity, precision ±0.5°F controls with HEPA fan filter units.</p>
+          </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/40 transition-all group">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Industrial Steam Boiler & Scrubbers Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full">Chemical Facility</span>
+          </div>
+          <div class="p-5 space-y-2">
+            <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Acid Fume Wet Scrubber Plant</h4>
+            <p class="text-xs text-slate-400">FRP chemical exhaust stack with automated pH neutralize monitoring.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE INDUSTRIAL SIZING & LOAD CALCULATOR TOOL -->
+  <section id="estimator" class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Calculator Description -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-950/80 border border-amber-800/50 px-3 py-1 rounded-full">Plant Engineering Tool</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Industrial Cooling Load & Maintenance Sizing Calculator</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Select your plant type, total square footage, and heat load parameters to estimate total cooling tonnage required and recommended maintenance SLA intervals.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-slate-800">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 font-bold">1</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Select Industrial Operation</h4>
+                <p class="text-xs text-slate-400">Determine baseline heat dissipation per square foot.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 font-bold">2</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Set Facility Footprint</h4>
+                <p class="text-xs text-slate-400">Adjust square footage to estimate total thermal load tonnage.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 font-bold">3</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Direct Proposal Dispatch</h4>
+                <p class="text-xs text-slate-400">Send specs directly to <strong>service@alboshvac.com</strong> for a formal engineering quote.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+          <form id="industrial-calculator-form" class="space-y-6">
+            
+            <!-- Step 1: Operation Type -->
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">1. Industrial Facility Type</label>
+              <select id="plant-type" class="w-full bg-slate-950 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 text-sm">
+                <option value="manufacturing" selected>Heavy Manufacturing / Assembly (High Heat Load)</option>
+                <option value="cleanroom">Cleanroom / Semiconductor (ISO Precision Environmental)</option>
+                <option value="chemical">Chemical / Wet Process (Corrosive Exhaust & Scrubbers)</option>
+                <option value="food">Food & Beverage Processing (Sanitary Cold Storage)</option>
+              </select>
+            </div>
+
+            <!-- Step 2: Square Footage Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-bold text-white">2. Plant Square Footage</label>
+                <span id="sqft-value" class="text-amber-400 font-mono font-bold text-sm">25,000 sq ft</span>
+              </div>
+              <input type="range" id="sqft-slider" min="5000" max="250000" step="5000" value="25000" class="w-full accent-amber-500 cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+                <span>5,000 sq ft</span>
+                <span>125,000 sq ft</span>
+                <span>250,000 sq ft</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Operating Schedule -->
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">3. Plant Operating Schedule</label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="radio" name="ops-hours" value="16" checked class="text-amber-500 focus:ring-amber-500">
+                  <span class="text-xs font-semibold text-slate-200">16 Hours / Day (2 Shifts)</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="radio" name="ops-hours" value="24" class="text-amber-500 focus:ring-amber-500">
+                  <span class="text-xs font-semibold text-slate-200">24/7 Continuous Operation</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Dynamic Output Box -->
+            <div class="p-5 rounded-xl bg-slate-950 border border-amber-500/40 space-y-3">
+              <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-slate-800 pb-3">
+                <div>
+                  <span class="text-slate-400 text-xs block">Estimated System Refrigeration Capacity</span>
+                  <span id="tonnage-output" class="text-3xl font-black text-amber-400">~125.0 Tons</span>
+                </div>
+                <div class="sm:text-right">
+                  <span class="text-slate-400 text-xs block">Recommended SLA Inspection</span>
+                  <span id="sla-output" class="text-sm font-bold text-white">Monthly PM + 1-Hr SLA</span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-1">
+                <p class="text-[11px] text-slate-400">Directly dispatches your parameters to senior industrial estimators.</p>
+                <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition-colors shadow-lg shadow-amber-500/20">
+                  Submit Industrial RFP
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Form Success Banner -->
+          <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-700 text-emerald-300 text-sm">
+            <i class="fa-solid fa-circle-check mr-2"></i> Industrial inquiry dispatched directly to <strong>service@alboshvac.com</strong>. A lead mechanical engineer will review your plant specs within 1 business hour.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAL COMPLIANCE & SAFETY BADGES -->
+  <section class="py-16 bg-slate-950 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Industry Standards & Regulatory Compliance</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-certificate text-3xl text-amber-500 mb-2"></i>
+          <h4 class="text-sm font-bold text-white">ASME Boiler Certified</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Section VIII Pressure Vessels</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-shield-virus text-3xl text-amber-500 mb-2"></i>
+          <h4 class="text-sm font-bold text-white">ASHRAE 62.1 & 90.1</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Industrial Energy & Ventilation</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-hard-hat text-3xl text-amber-500 mb-2"></i>
+          <h4 class="text-sm font-bold text-white">OSHA 30 Compliant</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Zero-Harm Site Protocols</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center">
+          <i class="fa-solid fa-filter text-3xl text-amber-500 mb-2"></i>
+          <h4 class="text-sm font-bold text-white">ISO 14644 Cleanrooms</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Class 1-8 Filtration Certification</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="py-16 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-black tracking-tight">Need Immediate Industrial Mechanical Support?</h2>
+      <p class="text-slate-950 font-medium max-w-2xl mx-auto text-base">
+        Our senior industrial team is available 24/7 for plant emergencies, chiller overhauls, and urgent RFP proposals.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="tel:14088349131" class="px-8 py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-xl shadow-xl text-sm transition-all">
+          <i class="fa-solid fa-phone mr-2 text-amber-400"></i> Call (408) 834-9131
+        </a>
+        <a href="mailto:service@alboshvac.com" class="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-extrabold rounded-xl shadow-xl text-sm transition-all">
+          <i class="fa-solid fa-envelope mr-2 text-amber-600"></i> Email Industrial Desk
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#05080e] border-t border-slate-800/80 text-slate-400 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+        
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black text-base">A</div>
+            <span class="text-lg font-black tracking-tight text-white">ALBOS <span class="text-amber-500">HVAC</span></span>
+          </a>
+          <p class="text-slate-400 leading-relaxed">
+            Industrial mechanical engineering, process chillers, wet scrubbers, industrial boilers, and mission-critical environmental controls.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Pages</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="residential.html" class="hover:text-white transition-colors">Residential HVAC</a></li>
+            <li><a href="commercial.html" class="hover:text-white transition-colors">Commercial HVAC</a></li>
+            <li><a href="industrial.html" class="text-amber-400 font-bold">Industrial Solutions</a></li>
+            <li><a href="parts.html" class="hover:text-white transition-colors">HVAC Parts & Components</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Company</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="about.html" class="hover:text-white transition-colors">About ALBOS HVAC</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#estimator" class="hover:text-white transition-colors">Industrial Load Calculator</a></li>
+            <li><a href="mailto:service@alboshvac.com" class="hover:text-white transition-colors">Submit Industrial RFP</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Direct Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-amber-500"></i>
+              <a href="mailto:service@alboshvac.com" class="hover:text-white">service@alboshvac.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-500"></i>
+              <a href="tel:18005552526" class="hover:text-white">(800) 555-ALBOS</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-amber-500"></i>
+              <span>Heavy Industrial Division</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+        <p>&copy; <span id="year"></span> ALBOS HVAC. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300">Industrial SLA Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      /* Mobile Menu Toggle */
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          nav.classList.toggle('hidden');
+        });
+      }
+
+      /* Industrial Load Calculator Logic */
+      var plantType = document.getElementById('plant-type');
+      var sqftSlider = document.getElementById('sqft-slider');
+      var sqftValue = document.getElementById('sqft-value');
+      var tonnageOutput = document.getElementById('tonnage-output');
+      var slaOutput = document.getElementById('sla-output');
+      var opsHoursRadios = document.querySelectorAll('input[name="ops-hours"]');
+
+      function updateCalculator() {
+        if (!sqftSlider || !tonnageOutput) return;
+
+        var sqft = parseInt(sqftSlider.value, 10);
+        sqftValue.textContent = sqft.toLocaleString() + ' sq ft';
+
+        // Base BTU per sq ft multiplier based on industrial plant type
+        var btuPerSqft = 60; // Manufacturing default
+        if (plantType.value === 'cleanroom') btuPerSqft = 90;
+        else if (plantType.value === 'chemical') btuPerSqft = 75;
+        else if (plantType.value === 'food') btuPerSqft = 80;
+
+        var isContinuous = false;
+        opsHoursRadios.forEach(function(r) {
+          if (r.checked && r.value === '24') isContinuous = true;
+        });
+
+        if (isContinuous) btuPerSqft *= 1.2;
+
+        var totalTons = (sqft * btuPerSqft) / 12000;
+        tonnageOutput.textContent = '~' + totalTons.toFixed(1) + ' Tons';
+
+        if (isContinuous || plantType.value === 'cleanroom') {
+          slaOutput.textContent = 'Bi-Weekly PM + 1-Hr SLA';
+        } else {
+          slaOutput.textContent = 'Monthly PM + 2-Hr SLA';
+        }
+      }
+
+      if (sqftSlider) {
+        sqftSlider.addEventListener('input', updateCalculator);
+        plantType.addEventListener('change', updateCalculator);
+        opsHoursRadios.forEach(function(r) { r.addEventListener('change', updateCalculator); });
+        updateCalculator();
+      }
+
+      /* Calculator Form Submit */
+      var calcForm = document.getElementById('industrial-calculator-form');
+      var formSuccess = document.getElementById('form-success');
+      if (calcForm) {
+        calcForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (formSuccess) {
+            formSuccess.classList.remove('hidden');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
+
+      /* Stat Counter Animation */
+      var counters = document.querySelectorAll('[data-count]');
+      if ('IntersectionObserver' in window && counters.length) {
+        var counterIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var target = parseFloat(el.getAttribute('data-count')) || 0;
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1200;
+            var start = null;
+            function step(ts) {
+              if (!start) start = ts;
+              var progress = Math.min((ts - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+            counterIO.unobserve(el);
+          });
+        }, { threshold: 0.4 });
+        counters.forEach(function (el) { counterIO.observe(el); });
+      }
+
+      /* Set Year */
+      var yearEl = document.querySelector('#year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+</html>
