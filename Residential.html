@@ -1,1 +1,792 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residential HVAC Services & Home Heating & Air | ALBOS HVAC</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b',
+              sky: '#0284c7',
+              amber: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .card-spotlight {
+      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(16, 185, 129, 0.08), transparent 40%);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion-content.active {
+      max-height: 1000px;
+      transition: max-height 0.5s ease-in-out;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- TOP EMERGENCY & DIRECT CONTACT BAR -->
+  <div class="bg-slate-900 border-b border-slate-800 text-xs py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-950/90 text-emerald-400 border border-emerald-800/60 animate-pulse">
+          <i class="fa-solid fa-house-chimney text-[10px] mr-1.5 text-emerald-400"></i> Residential Dispatch Open
+        </span>
+        <span class="hidden md:inline text-slate-400">
+          <i class="fa-solid fa-award mr-1 text-amber-400"></i> Licensed, Bonded & Insured Home Comfort Specialists
+        </span>
+      </div>
+      <div class="flex items-center space-x-6 text-slate-300">
+        <a href="mailto:service@alboshvac.com" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-emerald-400"></i> service@alboshvac.com
+        </a>
+        <a href="tel:4088349131" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold text-white bg-emerald-600/20 px-3 py-1 rounded-full border border-emerald-500/40">
+          <i class="fa-solid fa-phone text-emerald-400"></i> (408) 834-9131
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVIGATION -->
+  <header class="site-header sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 transition-shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white block leading-none">ALBOS <span class="text-emerald-400">HVAC</span></span>
+            <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold block mt-1">Home Comfort Systems</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAVIGATION LINKS -->
+        <nav class="hidden lg:block">
+          <ul class="flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
+            <li><a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Home</a></li>
+            <li><a href="residential.html" class="px-3 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/30">Residential</a></li>
+            <li><a href="commercial.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Commercial</a></li>
+            <li><a href="industrial.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Industrial</a></li>
+            <li><a href="parts.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Parts</a></li>
+            <li><a href="about.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">About</a></li>
+            <li><a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- CTA BUTTON -->
+        <div class="hidden sm:flex items-center space-x-3">
+          <a href="tel:4088349131" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:shadow-emerald-500/40 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call 408-834-9131
+          </a>
+        </div>
+
+        <!-- MOBILE NAV TOGGLE -->
+        <button class="nav-toggle lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div class="main-nav hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6">
+      <div class="flex flex-col space-y-2 mt-2">
+        <a href="index.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Home</a>
+        <a href="residential.html" class="px-4 py-2.5 rounded-lg bg-emerald-500/20 text-emerald-400 font-semibold">Residential</a>
+        <a href="commercial.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Commercial</a>
+        <a href="industrial.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Industrial</a>
+        <a href="parts.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Parts</a>
+        <a href="about.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">About</a>
+        <a href="contact.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Contact</a>
+        <a href="tel:4088349131" class="mt-2 w-full text-center bg-emerald-500 text-slate-950 font-bold py-3 rounded-xl block">
+          Call Tech: 408-834-9131
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-temperature-arrow-up text-emerald-400"></i> Trusted Local Home Heating & AC Experts
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Keep Your Home Comfortable <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-sky-400 bg-clip-text text-transparent">In Every Season.</span>
+          </h1>
+
+          <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+            From quick AC tune-ups and furnace replacements to high-efficiency heat pump upgrades and ductless mini-splits, ALBOS HVAC delivers reliable residential climate control.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="tel:4088349131" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+              <i class="fa-solid fa-phone-volume mr-2"></i> Call (408) 834-9131
+            </a>
+            <a href="#calculator" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base border border-slate-700 transition-all hover:border-slate-600">
+              <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> Estimate System Size
+            </a>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-slate-400 text-xs font-medium">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Same-Day Emergency Service
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Upfront Transparent Pricing
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> 100% Satisfaction Guarantee
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Photo Banner Card -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 p-2 border border-slate-700 shadow-2xl shadow-emerald-950/50">
+            <div class="relative overflow-hidden rounded-xl h-80 sm:h-96">
+              <!-- Photo 1: Residential Modern Living Room & Heat Pump Comfort -->
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Modern cozy home living room with optimal climate control" 
+                   class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                   onerror="this.src='https://placehold.co/800x600/0f172a/10b981?text=Home+HVAC+Comfort'">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+              
+              <!-- Floating Badge on Photo -->
+              <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 p-4 rounded-xl flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block">Homeowner Direct Line</span>
+                  <span class="text-lg font-bold text-white">(408) 834-9131</span>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl">
+                  <i class="fa-solid fa-shield-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BANNER -->
+  <section class="py-10 bg-slate-900/60 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-emerald-400" data-count="100" data-suffix="%">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Satisfaction Guaranteed</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-white" data-count="24" data-suffix="/7">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Emergency Dispatch</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-emerald-400" data-count="15" data-suffix="+ Yrs">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Local Bay Area Service</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-white" data-count="10" data-suffix=" Year">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Parts & Labor Warranty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE RESIDENTIAL SERVICES GRID WITH PHOTOS -->
+  <section id="services" class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-950/80 border border-emerald-800/50 px-3 py-1 rounded-full">Residential Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Complete Home Heating & Air Conditioning</h2>
+        <p class="text-slate-400 text-base">
+          Our certified residential technicians diagnose, repair, install, and maintain all major HVAC brands to keep your family comfortable year-round.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Service Card 1 with Photo 2: Central AC & Cooling -->
+        <div class="card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden relative">
+            <!-- Photo 2: High efficiency outdoor AC condenser unit -->
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Residential Air Conditioning Outdoor Unit Installation" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://placehold.co/800x500/0f172a/10b981?text=Air+Conditioning+Services'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/40 text-xs font-bold px-3 py-1 rounded-full">
+              Cooling Solutions
+            </span>
+          </div>
+          <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Air Conditioning Repair & Installation</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Fast diagnostics, refrigerant leak checks, compressor replacements, and high-efficiency SEER2 central air conditioning installs for cool summer comfort.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Emergency AC Leak & Failure Repair</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Ductless Mini-Split Zoning Installs</li>
+            </ul>
+            <div class="pt-2">
+              <a href="tel:4088349131" class="inline-flex items-center text-sm font-bold text-emerald-400 hover:text-emerald-300">
+                Schedule AC Service <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 with Photo 3: Heating & Furnace -->
+        <div class="card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden relative">
+            <!-- Photo 3: Cozy warm home fireplace / furnace heating context -->
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Residential Furnace & Heating Systems" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://placehold.co/800x500/0f172a/10b981?text=Heating+Furnace+Services'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/40 text-xs font-bold px-3 py-1 rounded-full">
+              Heating Systems
+            </span>
+          </div>
+          <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Furnace & Heating System Repairs</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Gas furnace safety inspections, heat exchanger testing, ignition control module repairs, and high-AFUE furnace replacements to keep your home warm all winter.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Carbon Monoxide & Heat Exchanger Safety Check</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Variable-Speed Blower Fan Upgrades</li>
+            </ul>
+            <div class="pt-2">
+              <a href="tel:4088349131" class="inline-flex items-center text-sm font-bold text-emerald-400 hover:text-emerald-300">
+                Book Furnace Inspection <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 with Photo 4: Heat Pumps & Eco Electrification -->
+        <div class="card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden relative">
+            <!-- Photo 4: Modern home heat pump / smart thermostat installation -->
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Residential Heat Pump and Smart Thermostat Controls" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://placehold.co/800x500/0f172a/10b981?text=Heat+Pump+Technology'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-teal-400 border border-teal-500/40 text-xs font-bold px-3 py-1 rounded-full">
+              Eco Energy Upgrades
+            </span>
+          </div>
+          <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Electric Heat Pump Conversions</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Transition to clean electric heat pumps providing both heating and cooling in a single high-efficiency system. Qualify for Bay Area electrification rebates.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> All-In-One Heating & Cooling Efficiency</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Assistance with Regional Energy Rebates</li>
+            </ul>
+            <div class="pt-2">
+              <a href="tel:4088349131" class="inline-flex items-center text-sm font-bold text-emerald-400 hover:text-emerald-300">
+                Explore Heat Pumps <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4: Indoor Air Quality & Duct Cleaning -->
+        <div class="card bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden relative">
+            <!-- Photo 5: Clean home air filtration & ductwork system -->
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Clean indoor air quality and ductwork" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.src='https://placehold.co/800x500/0f172a/10b981?text=Indoor+Air+Quality'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/40 text-xs font-bold px-3 py-1 rounded-full">
+              Clean Air & Health
+            </span>
+          </div>
+          <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Indoor Air Quality & Duct Sealing</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Remove dust, allergens, and wildfire smoke particles with MERV 13+ filtration, UV germicidal air purifiers, whole-home humidifiers, and duct sealing.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Whole-Home UV & Air Scrubber Installation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Duct Leakage Testing & Air Sealing</li>
+            </ul>
+            <div class="pt-2">
+              <a href="tel:4088349131" class="inline-flex items-center text-sm font-bold text-emerald-400 hover:text-emerald-300">
+                Improve Home Air Quality <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SYSTEM CALCULATOR WIDGET -->
+  <section id="calculator" class="py-20 lg:py-28 bg-slate-900/40 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-950/80 border border-emerald-800/50 px-3 py-1 rounded-full">Interactive Sizing Tool</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Estimate Your Home HVAC Tonnage & Savings</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Use our interactive residential sizing calculator to determine the estimated heating & cooling tonnage required for your square footage and see potential energy savings.
+          </p>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-phone text-emerald-400 text-xl"></i>
+              <div>
+                <h4 class="text-xs text-slate-400 uppercase font-semibold">Need an On-Site Load Calculation?</h4>
+                <a href="tel:4088349131" class="text-white font-bold hover:text-emerald-400">Call Direct: (408) 834-9131</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-sm font-bold text-white">Home Living Area (Square Feet):</label>
+              <span id="sqft-val-display" class="text-lg font-extrabold text-emerald-400">1,800 sq ft</span>
+            </div>
+            <input type="range" id="res-sqft-slider" min="800" max="4500" step="100" value="1800" class="w-full h-2 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>800 sq ft (Condo)</span>
+              <span>2,500 sq ft (Single Family)</span>
+              <span>4,500+ sq ft (Estate)</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-white mb-2">Desired Equipment Efficiency Level:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="flex flex-col p-3 rounded-xl border border-slate-800 bg-slate-950/80 cursor-pointer hover:border-slate-700">
+                <input type="radio" name="eff-level" value="standard" class="text-emerald-500 focus:ring-emerald-500">
+                <span class="text-xs font-bold text-white mt-1">Standard SEER2 14</span>
+                <span class="text-[10px] text-slate-400">Reliable baseline</span>
+              </label>
+              <label class="flex flex-col p-3 rounded-xl border border-slate-800 bg-slate-950/80 cursor-pointer hover:border-slate-700 border-emerald-500/50">
+                <input type="radio" name="eff-level" value="high" checked class="text-emerald-500 focus:ring-emerald-500">
+                <span class="text-xs font-bold text-emerald-400 mt-1">High SEER2 18+</span>
+                <span class="text-[10px] text-slate-400">Popular Energy Saver</span>
+              </label>
+              <label class="flex flex-col p-3 rounded-xl border border-slate-800 bg-slate-950/80 cursor-pointer hover:border-slate-700">
+                <input type="radio" name="eff-level" value="heatpump" class="text-emerald-500 focus:ring-emerald-500">
+                <span class="text-xs font-bold text-teal-400 mt-1">Heat Pump Inverter</span>
+                <span class="text-[10px] text-slate-400">Max Electric Rebates</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dynamic Results Output -->
+          <div class="p-6 rounded-xl bg-slate-950 border border-emerald-500/30 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+            <div>
+              <span class="text-slate-400 text-xs block">Estimated System Size</span>
+              <span id="calculated-tonnage" class="text-3xl font-extrabold text-white">3.0 Tons</span>
+              <span id="calculated-btu" class="text-xs text-slate-400 block mt-0.5">~36,000 BTU/hr Capacity</span>
+            </div>
+            <div>
+              <span class="text-slate-400 text-xs block">Est. Annual Utility Savings</span>
+              <span id="calculated-savings" class="text-3xl font-extrabold text-emerald-400">$380 / yr</span>
+              <span class="text-[11px] text-emerald-400 block mt-0.5"><i class="fa-solid fa-leaf"></i> Eco-Friendly System</span>
+            </div>
+          </div>
+
+          <div class="text-center pt-2">
+            <a href="tel:4088349131" class="w-full inline-block py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold rounded-xl shadow-lg transition-colors text-sm">
+              <i class="fa-solid fa-phone mr-2"></i> Confirm System Size with a Master Tech: (408) 834-9131
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOME COMFORT MEMBERSHIP / MAINTENANCE PLAN -->
+  <section class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-950/80 border border-emerald-800/50 px-3 py-1 rounded-full">Preventative Protection</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">ALBOS Home Comfort Membership</h2>
+        <p class="text-slate-400 text-base">
+          Avoid sudden breakdowns and extend your system's lifespan with our annual biannual maintenance membership.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Tier 1 -->
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between space-y-6 hover:border-slate-700 transition-colors">
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Spring AC Tune-Up</h3>
+            <div class="text-3xl font-extrabold text-emerald-400">$99 <span class="text-xs text-slate-400 font-normal">/ Single Visit</span></div>
+            <p class="text-slate-400 text-xs">Complete 21-point cooling inspection prior to summer heatwaves.</p>
+            <ul class="text-xs text-slate-300 space-y-2.5 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Condenser Coil Cleaning</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Refrigerant Level Check</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Blower Motor Amperage Test</li>
+            </ul>
+          </div>
+          <a href="tel:4088349131" class="w-full text-center py-3 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl border border-slate-700">Book AC Tune-Up</a>
+        </div>
+
+        <!-- Tier 2 (Highlighted) -->
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-emerald-500 p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-2xl shadow-emerald-950/40 relative">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Most Popular</span>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Annual Comfort Club</h3>
+            <div class="text-3xl font-extrabold text-emerald-400">$189 <span class="text-xs text-slate-400 font-normal">/ Year</span></div>
+            <p class="text-slate-400 text-xs">Full year-round protection including both heating and cooling tune-ups.</p>
+            <ul class="text-xs text-slate-300 space-y-2.5 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 1 Spring AC Tune-Up + 1 Fall Heating Check</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 15% Discount on All Repairs</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Priority VIP Dispatch Status</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Free Standard Filter Replacements</li>
+            </ul>
+          </div>
+          <a href="tel:4088349131" class="w-full text-center py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold rounded-xl shadow-lg">Join Comfort Club</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between space-y-6 hover:border-slate-700 transition-colors">
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Fall Heating Tune-Up</h3>
+            <div class="text-3xl font-extrabold text-emerald-400">$99 <span class="text-xs text-slate-400 font-normal">/ Single Visit</span></div>
+            <p class="text-slate-400 text-xs">Complete safety and efficiency overhaul for your furnace or heat pump.</p>
+            <ul class="text-xs text-slate-300 space-y-2.5 font-medium border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Burner & Igniter Cleaning</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Heat Exchanger CO Safety Test</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Thermostat Calibration</li>
+            </ul>
+          </div>
+          <a href="tel:4088349131" class="w-full text-center py-3 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl border border-slate-700">Book Furnace Tune-Up</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESIDENTIAL FAQ ACCORDION -->
+  <section class="py-20 bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14 space-y-3">
+        <h2 class="text-3xl font-extrabold text-white">Frequently Asked Residential Questions</h2>
+        <p class="text-slate-400 text-sm">Have questions about your home HVAC system? We have answers.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Question 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>How fast can a technician arrive at my home for emergency repairs?</span>
+            <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              We offer same-day emergency dispatch for residential heating and air conditioning failures. Call our direct line at <strong>(408) 834-9131</strong> to speak with an on-call technician immediately.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>How often should I replace my home air filter?</span>
+            <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              Standard 1-inch air filters should be replaced every 1 to 3 months. If you have pets, allergies, or high-efficiency MERV 13 media filters, we recommend checking them monthly and replacing them every 3 to 6 months.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>Should I repair or replace my aging air conditioner or furnace?</span>
+            <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              If your system is over 12-15 years old and repair costs exceed 50% of the cost of a new high-efficiency system, replacing it typically saves you money in the long run through reduced monthly utility bills and warranty protection.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER BANNER -->
+  <section class="py-16 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">Need Home Heating or AC Service Right Now?</h2>
+      <p class="text-emerald-50 max-w-2xl mx-auto text-base font-medium">
+        Call ALBOS HVAC directly to speak with a local technician and schedule your service appointment.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="tel:4088349131" class="px-8 py-4 bg-slate-950 hover:bg-slate-900 text-white font-black text-lg rounded-xl shadow-2xl transition-all hover:scale-105">
+          <i class="fa-solid fa-phone mr-2 text-emerald-400"></i> Call (408) 834-9131
+        </a>
+        <a href="mailto:service@alboshvac.com" class="px-8 py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold text-lg rounded-xl shadow-2xl transition-all">
+          <i class="fa-solid fa-envelope mr-2 text-emerald-600"></i> Email Service Desk
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800/80">
+        
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-base">A</div>
+            <span class="text-lg font-black tracking-tight text-white">ALBOS <span class="text-emerald-400">HVAC</span></span>
+          </a>
+          <p class="text-slate-400 leading-relaxed">
+            Reliable, licensed residential heating, air conditioning, heat pump, and indoor air quality services.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Pages</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="residential.html" class="text-emerald-400 font-bold">Residential HVAC</a></li>
+            <li><a href="commercial.html" class="hover:text-white transition-colors">Commercial HVAC</a></li>
+            <li><a href="industrial.html" class="hover:text-white transition-colors">Industrial Solutions</a></li>
+            <li><a href="parts.html" class="hover:text-white transition-colors">HVAC Parts & Components</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Services</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="#services" class="hover:text-white transition-colors">AC Repair & Installation</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Furnace Heating Systems</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Heat Pump Conversions</a></li>
+            <li><a href="#calculator" class="hover:text-white transition-colors">System Size Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Direct Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-emerald-400"></i>
+              <a href="tel:4088349131" class="hover:text-white font-bold text-white">(408) 834-9131</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-emerald-400"></i>
+              <a href="mailto:service@alboshvac.com" class="hover:text-white">service@alboshvac.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-emerald-400"></i>
+              <span>Residential Service Division</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+        <p>&copy; <span id="year"></span> ALBOS HVAC. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300">Terms of Service</a>
+          <a href="tel:4088349131" class="hover:text-emerald-400">Dispatch Line: 408-834-9131</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top fixed bottom-6 right-6 p-3 rounded-full bg-emerald-500 text-slate-950 shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:bg-emerald-400 focus:outline-none" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      /* 1. Mobile Navigation Toggle */
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          nav.classList.toggle('hidden');
+        });
+      }
+
+      /* 2. Residential System Calculator */
+      var slider = document.getElementById('res-sqft-slider');
+      var sqftDisplay = document.getElementById('sqft-val-display');
+      var tonnageDisplay = document.getElementById('calculated-tonnage');
+      var btuDisplay = document.getElementById('calculated-btu');
+      var savingsDisplay = document.getElementById('calculated-savings');
+      var effRadios = document.querySelectorAll('input[name="eff-level"]');
+
+      function updateCalculator() {
+        if (!slider) return;
+        var sqft = parseInt(slider.value, 10);
+        sqftDisplay.textContent = sqft.toLocaleString() + ' sq ft';
+
+        var tons = (sqft / 600).toFixed(1);
+        if (tons < 1.5) tons = 1.5;
+        var btu = Math.round(tons * 12000);
+
+        tonnageDisplay.textContent = tons + ' Tons';
+        btuDisplay.textContent = '~' + btu.toLocaleString() + ' BTU/hr Capacity';
+
+        var selectedEff = 'high';
+        effRadios.forEach(function(r) { if (r.checked) selectedEff = r.value; });
+
+        var savings = Math.round(sqft * 0.20);
+        if (selectedEff === 'high') savings = Math.round(sqft * 0.28);
+        if (selectedEff === 'heatpump') savings = Math.round(sqft * 0.35);
+
+        savingsDisplay.textContent = '$' + savings.toLocaleString() + ' / yr';
+      }
+
+      if (slider) {
+        slider.addEventListener('input', updateCalculator);
+        effRadios.forEach(function(r) { r.addEventListener('change', updateCalculator); });
+        updateCalculator();
+      }
+
+      /* 3. FAQ Accordion Logic */
+      var accordions = document.querySelectorAll('.accordion-btn');
+      accordions.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.fa-chevron-down');
+          
+          if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            document.querySelectorAll('.accordion-content').forEach(function(c) { c.classList.remove('active'); });
+            document.querySelectorAll('.accordion-btn .fa-chevron-down').forEach(function(i) { i.style.transform = 'rotate(0deg)'; });
+            content.classList.add('active');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      /* 4. Stat Counter Animation */
+      var counters = document.querySelectorAll('[data-count]');
+      if ('IntersectionObserver' in window && counters.length) {
+        var counterIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var target = parseFloat(el.getAttribute('data-count')) || 0;
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1200;
+            var start = null;
+            function step(ts) {
+              if (!start) start = ts;
+              var progress = Math.min((ts - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+            counterIO.unobserve(el);
+          });
+        }, { threshold: 0.4 });
+        counters.forEach(function (el) { counterIO.observe(el); });
+      }
+
+      /* 5. Back to Top Button */
+      var backToTop = document.querySelector('.back-to-top');
+      if (backToTop) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 400) {
+            backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            backToTop.classList.add('opacity-100');
+          } else {
+            backToTop.classList.add('opacity-0', 'pointer-events-none');
+            backToTop.classList.remove('opacity-100');
+          }
+        });
+        backToTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      /* 6. Dynamic Year */
+      var yearEl = document.querySelector('#year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+</html>
