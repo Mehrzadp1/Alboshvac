@@ -1,237 +1,810 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<script>document.documentElement.classList.add('js-ready');</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Albos HVAC | Licensed San Jose HVAC Contractor</title>
-<meta name="description" content="Albos HVAC is a licensed, owner-operated residential and commercial HVAC contractor serving San Jose, CA. Learn about our mission, values, and credentials.">
-<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial HVAC Solutions | ALBOS HVAC</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#0369a1',
+              900: '#0f172a',
+              accent: '#f59e0b',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Spotlights & Transitions */
+    .card-spotlight {
+      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(2, 132, 199, 0.08), transparent 40%);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion-content.active {
+      max-height: 1000px;
+      transition: max-height 0.5s ease-in-out;
+    }
+    /* Smooth page scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white">
 
-<div class="top-bar">
-  <div class="container">
-    <div class="top-links">
-      <a href="tel:14088349131">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 2-2z"/></svg>
-        (408) 834-9131
-      </a>
-      <a href="mailto:Info@Alboshvac.com">Info@Alboshvac.com</a>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
-       Info@Alboshvac.com
-      </a>
-    </div>
-    <div class="top-links">
-      <span>Serving San Jose &amp; the Greater Bay Area · CA License #1077760</span>
-    </div>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="nav-wrap">
-    <a href="index.html" class="logo">
-      <span class="mark">
-        <img src="assets/logo-icon.svg" alt="Albos HVAC logo" width="46" height="46">
-      </span>
-      <span>Albos HVAC<small>Comfort in Every Season</small></span>
-    </a>
- <nav class="main-nav">
-  <ul style="display: flex !important; flex-direction: row !important; list-style: none !important; gap: 24px !important; align-items: center !important; margin: 0 !important; padding: 0 !important;">
-    <li><a href="index.html" class="nav-link">Home</a></li>
-    <li><a href="residential.html" class="nav-link">Residential</a></li>
-    <li><a href="commercial.html" class="nav-link">Commercial</a></li>
-    <li><a href="industrial.html" class="nav-link">Industrial</a></li>
-    <li><a href="parts.html" class="nav-link">Parts</a></li>
-    <li><a href="about.html" class="nav-link">About</a></li>
-    <li><a href="contact.html" class="nav-link">Contact</a></li>
-  </ul>
-</nav>
-    <div class="header-actions">
-      <a href="tel:14088349131" class="phone-pill">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 2-2z"/></svg>
-        <span>(408) 834-9131</span>
-      </a>
-      <a href="contact.html" class="btn btn-primary header-cta">Get a Free Quote</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+  <!-- TOP EMERGENCY BAR -->
+  <div class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-950/80 text-red-400 border border-red-800/50 animate-pulse">
+          <i class="fa-solid fa-circle text-[8px] mr-1.5 text-red-500"></i> 24/7 Commercial Rapid Response
+        </span>
+        <span class="hidden md:inline text-slate-400">
+          <i class="fa-solid fa-clock mr-1 text-slate-500"></i> Guaranteed 2-Hour SLA for Contract Clients
+        </span>
+      </div>
+      <div class="flex items-center space-x-6 text-slate-300">
+        <a href="mailto:service@alboshvac.com" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-sky-500"></i> service@alboshvac.com
+        </a>
+        <a href="tel:18005552526" class="hover:text-sky-400 transition-colors flex items-center gap-1.5 font-semibold text-white">
+          <i class="fa-solid fa-phone text-sky-500"></i> (800) 555-ALBOS
+        </a>
+      </div>
     </div>
   </div>
-</header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
-    <h1>Built on Craftsmanship &amp; Straight Answers</h1>
-    <p style="color:rgba(255,255,255,.78); max-width:620px; margin:0 auto;">Get to know the team behind Albos HVAC — a licensed, owner-operated HVAC contractor serving San Jose homes and businesses.</p>
-  </div>
-</section>
+  <!-- MAIN STICKY NAVIGATION -->
+  <header class="site-header sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 transition-shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- BRAND LOGO -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-blue-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white block leading-none">ALBOS <span class="text-sky-400">HVAC</span></span>
+            <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold block mt-1">Commercial & Mechanical</span>
+          </div>
+        </a>
 
-<!-- Story -->
-<section class="section">
-  <div class="container">
-    <div class="grid-2 reveal">
-      <div>
-        <div class="eyebrow">Our Story</div>
-        <h2>HVAC Done Right, From an Owner Who's On Every Job</h2>
-        <p>Albos HVAC was built around a simple idea: homeowners and business owners deserve a heating and cooling partner who shows up, explains things clearly, and does the work right the first time. As a locally owned San Jose contractor, we treat every service call — residential or commercial — with the same level of care we'd want in our own home.</p>
-        <p>From single-room repairs to full rooftop unit replacements, we bring hands-on ownership and licensed expertise to every project, backed by a commitment to honest pricing and clean, code-compliant workmanship.</p>
-        <div class="cta-row">
-          <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
-          <a href="tel:14088349131" class="btn btn-outline-dark">Call (408) 834-9131</a>
+        <!-- DESKTOP NAVIGATION LINKS -->
+        <nav class="hidden lg:block">
+          <ul class="flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
+            <li><a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Home</a></li>
+            <li><a href="residential.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Residential</a></li>
+            <li><a href="commercial.html" class="px-3 py-2 rounded-lg bg-sky-500/10 text-sky-400 font-semibold border border-sky-500/30">Commercial</a></li>
+            <li><a href="industrial.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Industrial</a></li>
+            <li><a href="parts.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Parts</a></li>
+            <li><a href="about.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">About</a></li>
+            <li><a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- CTA BUTTON -->
+        <div class="hidden sm:flex items-center space-x-3">
+          <a href="#estimator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-sky-500/20 transition-all hover:shadow-sky-500/40 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-calculator"></i> Scope Estimator
+          </a>
+        </div>
+
+        <!-- MOBILE NAV TOGGLE -->
+        <button class="nav-toggle lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div class="main-nav hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6">
+      <div class="flex flex-col space-y-2 mt-2">
+        <a href="index.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Home</a>
+        <a href="residential.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Residential</a>
+        <a href="commercial.html" class="px-4 py-2.5 rounded-lg bg-sky-500/20 text-sky-400 font-semibold">Commercial</a>
+        <a href="industrial.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Industrial</a>
+        <a href="parts.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Parts</a>
+        <a href="about.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">About</a>
+        <a href="contact.html" class="px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Contact</a>
+        <a href="#estimator" class="mt-2 w-full text-center bg-sky-500 text-slate-950 font-bold py-3 rounded-xl">Get Commercial Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,165,233,0.15),rgba(255,255,255,0))] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-sky-400 text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-building text-sky-400"></i> Engineered Commercial HVAC Solutions
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Enterprise HVAC Systems <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-sky-400 via-blue-400 to-teal-300 bg-clip-text text-transparent">Built for Maximum Uptime.</span>
+          </h1>
+
+          <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+            ALBOS HVAC delivers mission-critical commercial mechanical engineering, preventative maintenance, RTU retrofits, and smart BMS integration for office towers, medical facilities, and retail complexes.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#estimator" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-base shadow-xl shadow-sky-500/20 transition-all hover:scale-[1.02]">
+              <i class="fa-solid fa-file-signature mr-2"></i> Request Commercial Proposal
+            </a>
+            <a href="tel:18005552526" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base border border-slate-700 transition-all hover:border-slate-600">
+              <i class="fa-solid fa-headset mr-2 text-sky-400"></i> 24/7 Dispatch Team
+            </a>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-slate-400 text-xs font-medium">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-sky-400"></i> Certified Master Technicians
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-sky-400"></i> ASHRAE 62.1 Compliant
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-sky-400"></i> Custom Maintenance Contracts
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic Card / Visual Banner -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 p-1 border border-slate-700 shadow-2xl shadow-sky-950/50">
+            <div class="bg-slate-950 rounded-xl p-6 space-y-6">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
+                  <span class="text-xs font-mono text-slate-300 uppercase">Live BMS Monitor Status</span>
+                </div>
+                <span class="text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 px-2.5 py-1 rounded-full font-medium">Systems Optimal</span>
+              </div>
+
+              <!-- Facility Metrics Grid -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                  <span class="text-slate-400 text-xs block mb-1">Overall System Efficiency</span>
+                  <span class="text-2xl font-extrabold text-white">98.4%</span>
+                  <span class="text-[10px] text-emerald-400 block mt-1"><i class="fa-solid fa-arrow-trend-up"></i> +4.2% Optimization</span>
+                </div>
+                <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                  <span class="text-slate-400 text-xs block mb-1">Active Airflow (CFM)</span>
+                  <span class="text-2xl font-extrabold text-sky-400">42,500</span>
+                  <span class="text-[10px] text-slate-400 block mt-1">Across 14 RTU Zones</span>
+                </div>
+              </div>
+
+              <!-- Visual Equipment Card -->
+              <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl">
+                  <i class="fa-solid fa-fan"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Rooftop Unit #4 Maintenance</h4>
+                  <p class="text-xs text-slate-400">Scheduled Inspection: Completed</p>
+                  <p class="text-[11px] text-sky-400 font-mono mt-0.5">Filter Delta P: Normal (0.15" w.g.)</p>
+                </div>
+              </div>
+
+              <a href="#services" class="w-full block text-center py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700 transition-colors">
+                Explore Commercial Capabilities <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METRIC COUNTER BANNER -->
+  <section class="py-12 bg-slate-900/60 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-sky-400" data-count="99" data-suffix=".8%">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Uptime SLA Guaranteed</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-white" data-count="16" data-suffix="+ Yrs">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Commercial HVAC Expertise</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-sky-400" data-count="450" data-suffix="+">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Managed Properties</p>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl lg:text-4xl font-extrabold text-white" data-count="2" data-suffix=" Hours">0</div>
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Average Emergency Arrival</p>
         </div>
       </div>
-      <div class="service-visual" style="border-radius:var(--radius-lg);">
-        <img src="assets/illustration-technician.svg" alt="Albos HVAC technician servicing an outdoor condenser unit" style="width:88%; max-width:360px;">
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- By the numbers -->
-<section class="section-tight" style="background:var(--color-surface); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
-  <div class="container">
-    <div class="stat-strip reveal">
-      <div class="stat"><div class="num">100%</div><div class="lbl">Owner-Operated</div></div>
-      <div class="stat"><div class="num">2</div><div class="lbl">Divisions — Residential &amp; Commercial</div></div>
-      <div class="stat"><div class="num">24/7</div><div class="lbl">Emergency Availability</div></div>
-      <div class="stat"><div class="num">#1077760</div><div class="lbl">CA Contractor License</div></div>
-    </div>
-  </div>
-</section>
+  <!-- KEY COMMERCIAL SERVICES SHOWCASE -->
+  <section id="services" class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-sky-400 text-xs font-bold uppercase tracking-widest bg-sky-950/80 border border-sky-800/50 px-3 py-1 rounded-full">Complete Facility Coverage</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Enterprise Mechanical & HVAC Services</h2>
+        <p class="text-slate-400 text-base">
+          From heavy rooftop package replacements to precision BACnet building controls, our team provides full end-to-end commercial solutions designed to control operational costs.
+        </p>
+      </div>
 
-<!-- Values -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">What Drives Us</div>
-      <h2>Our Values</h2>
-    </div>
-    <div class="grid-4">
-      <div class="card feature-card value-card reveal">
-        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg></div>
-        <h3>Integrity</h3>
-        <p>Honest assessments and upfront pricing — we recommend what your system actually needs, nothing more.</p>
-      </div>
-      <div class="card feature-card value-card reveal reveal-delay-1">
-        <div class="icon-badge warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 1.4 0l1.6-1.6a1 1 0 0 1 1.4 0l1.2 1.2a1 1 0 0 1 0 1.4l-1.6 1.6a1 1 0 0 0 0 1.4l3.6 3.6a2 2 0 1 1-2.8 2.8l-3.6-3.6a1 1 0 0 0-1.4 0l-1.6 1.6a1 1 0 0 1-1.4 0l-1.2-1.2a1 1 0 0 1 0-1.4l1.6-1.6a1 1 0 0 0 0-1.4L6.3 3.7"/></svg></div>
-        <h3>Craftsmanship</h3>
-        <p>Clean installs, tight ductwork, and code-compliant work — details that keep systems efficient for years.</p>
-      </div>
-      <div class="card feature-card value-card reveal reveal-delay-2">
-        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>Reliability</h3>
-        <p>We show up when we say we will, respond fast to emergencies, and stand behind our work.</p>
-      </div>
-      <div class="card feature-card value-card reveal reveal-delay-3">
-        <div class="icon-badge warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 6-3 6-6.5S14 8 13 3c-1 3-2 3.5-3.5 5.5S6 13 6 15.5C6 19 8 22 12 22z"/></svg></div>
-        <h3>Comfort-First</h3>
-        <p>Every recommendation is built around what actually makes your space more comfortable and efficient.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Founder -->
-<section class="section-tight" style="background:var(--color-surface); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
-  <div class="container">
-    <div class="founder-block reveal">
-      <div class="founder-avatar">MS</div>
-      <div>
-        <span class="founder-role">Owner &amp; Lead Technician</span>
-        <h3 style="font-size:24px; margin-bottom:10px;">Mehrzad Sarvi</h3>
-        <p style="margin-bottom:0;">Mehrzad leads Albos HVAC with a hands-on approach — personally overseeing residential and commercial projects across San Jose to make sure every install and repair meets the same standard of quality and licensed workmanship.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Credentials -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Credentials</div>
-      <h2>Licensed, Bonded &amp; Insured</h2>
-      <p>Verify our standing anytime with the California Contractors State License Board.</p>
-    </div>
-    <div class="credential-strip reveal">
-      <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><div><strong>Active CA License</strong><span>Warm Air Heating, Ventilating &amp; A/C — #1077760</span></div></div>
-      <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg><div><strong>Bonded</strong><span>Contractor bond on file</span></div></div>
-      <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 5v-2M12 21v-2M5 12H3M21 12h-2M6.5 6.5L5 5M19 19l-1.5-1.5M6.5 17.5L5 19M19 5l-1.5 1.5"/></svg><div><strong>Workers' Comp Insured</strong><span>Coverage for every crew member on site</span></div></div>
-      <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg><div><strong>Locally Owned</strong><span>Based in San Jose, CA</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-tight">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div>
-        <h2>Let's talk about your HVAC project</h2>
-        <p>Residential or commercial — we're happy to take a look and give you honest options.</p>
-      </div>
-      <div class="cta-row">
-        <a href="tel:14088349131" class="btn btn-outline btn-lg">Call (408) 834-9131</a>
-        <a href="contact.html" class="btn btn-lg" style="background:#fff; color:var(--color-accent-dark); box-shadow:var(--shadow-md);">Get a Free Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="foot-logo">
-          <span class="mark" style="width:36px;height:36px;">
-            <img src="assets/logo-icon.svg" alt="Albos HVAC logo" width="36" height="36">
-          </span>
-          <span>Albos HVAC</span>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-temperature-arrow-down"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Rooftop Units (RTUs) & Package Systems</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Turnkey installation, compressor rebuilds, and preventive maintenance for single and multi-zone commercial RTUs up to 100+ tons.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Economizer Calibration & Retrofits</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Crane Service & Rigging Planning</li>
+          </ul>
         </div>
-        <p style="font-size:14.5px;">Licensed residential and commercial HVAC services across San Jose and the greater Bay Area. Comfort in every season.</p>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="index.html#commercial">Commercial &amp; Industrial</a></li>
-          <li><a href="index.html#residential">Residential HVAC</a></li>
-          <li><a href="contact.html">Maintenance Plans</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:14088349131">(408) 834-9131</a></div>
-        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg><a href="mailto:Mpalbos@gmail.com">Mpalbos@gmail.com</a></div>
-        <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.6 7-12A7 7 0 1 0 5 10c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>San Jose, CA &amp; surrounding areas</span></div>
+
+        <!-- Service 2 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Chilled Water & Cooling Towers</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Centrifugal and air-cooled chiller overhauls, cooling tower water treatment compliance, and high-efficiency variable primary pumping systems.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Chemical Treatment & Legionella Compliance</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> VFD & Variable Speed Upgrades</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Building Automation & BMS Integration</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            BACnet and Modbus control panel programming. Remote energy management dashboards for total facility oversight and setback schedules.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Real-Time Fault Detection Diagnostics</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Smart Thermostat & Sensor Deployment</li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Preventative Maintenance Contracts</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Structured quarterly or monthly maintenance service level agreements (SLAs) engineered to eliminate unexpected facility downtime.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Comprehensive Coil Cleaning & Belt Inspections</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Priority Emergency Response Status</li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Indoor Air Quality (IAQ) & Air Handlers</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Commercial MERV 13-16 filtration, UV-C germicidal irradiation systems, and outdoor air exchange balancing for high-density occupancy.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Airflow & TAB Balancing Certification</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> High-Efficiency HEPA Filtration Systems</li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="card card-spotlight bg-slate-900/80 p-8 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">24/7 Mechanical Emergency Repairs</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Rapid dispatch field service teams stocked with commercial compressor parts, fan motors, and control boards for rapid system recovery.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium border-t border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Direct Line Access to Senior Master Techs</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> On-Demand Temporary Chiller Connections</li>
+          </ul>
+        </div>
+
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Albos HVAC. All rights reserved. CA License #1077760.</span>
-      <div class="socials">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v7h3v-7h2.5l.5-3H14v-1.5A1 1 0 0 1 15 8z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-        <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></a>
+  </section>
+
+  <!-- PROPERTY TYPES WE SERVE -->
+  <section class="py-20 bg-slate-900/40 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <h2 class="text-3xl font-extrabold text-white">Commercial Facility Specializations</h2>
+        <p class="text-slate-400 text-sm">Customized mechanical maintenance protocols configured specifically for your facility type.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center hover:border-slate-700 transition-colors">
+          <i class="fa-solid fa-city text-3xl text-sky-400 mb-3 block"></i>
+          <h4 class="text-sm font-bold text-white">Commercial Office Towers</h4>
+          <p class="text-xs text-slate-400 mt-1">Multi-Tenant VAV Systems</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center hover:border-slate-700 transition-colors">
+          <i class="fa-solid fa-hospital text-3xl text-sky-400 mb-3 block"></i>
+          <h4 class="text-sm font-bold text-white">Healthcare & Cleanrooms</h4>
+          <p class="text-xs text-slate-400 mt-1">Critical Temp & Pressure</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center hover:border-slate-700 transition-colors">
+          <i class="fa-solid fa-store text-3xl text-sky-400 mb-3 block"></i>
+          <h4 class="text-sm font-bold text-white">Retail & Shopping Malls</h4>
+          <p class="text-xs text-slate-400 mt-1">High-Occupancy RTUs</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center hover:border-slate-700 transition-colors">
+          <i class="fa-solid fa-warehouse text-3xl text-sky-400 mb-3 block"></i>
+          <h4 class="text-sm font-bold text-white">Logistics & Warehouses</h4>
+          <p class="text-xs text-slate-400 mt-1">High-Bay Ventilation</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 text-center hover:border-slate-700 transition-colors">
+          <i class="fa-solid fa-building-user text-3xl text-sky-400 mb-3 block"></i>
+          <h4 class="text-sm font-bold text-white">Multi-Family Complexes</h4>
+          <p class="text-xs text-slate-400 mt-1">Central Hydronic Loop</p>
+        </div>
+
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<button class="back-to-top" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+  <!-- INTERACTIVE COST & SCOPE ESTIMATOR TOOL -->
+  <section id="estimator" class="py-20 lg:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Estimator Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-sky-400 text-xs font-bold uppercase tracking-widest bg-sky-950/80 border border-sky-800/50 px-3 py-1 rounded-full">Interactive Facility Planner</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Calculate Your Commercial Scope & Estimate</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Use our interactive estimator to select your facility footprint, desired system configurations, and maintenance frequency for an instant preliminary quote breakdown.
+          </p>
 
-<script src="js/main.js"></script>
+          <div class="space-y-4 pt-4 border-t border-slate-800">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 font-bold">1</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Select Facility Footprint</h4>
+                <p class="text-xs text-slate-400">Choose square footage to determine recommended cooling tonnage.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 font-bold">2</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Select Services & Maintenance</h4>
+                <p class="text-xs text-slate-400">Add preventative maintenance SLAs, BMS controls, or RTU retrofits.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 font-bold">3</div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Receive Instant Proposal</h4>
+                <p class="text-xs text-slate-400">Submit specs directly to our commercial engineering leads.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estimator Form Card -->
+        <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+          <form id="commercial-estimator-form" class="space-y-6">
+            
+            <!-- Step 1: Square Footage -->
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">1. Facility Size (Square Footage)</label>
+              <select id="sqft-select" class="w-full bg-slate-950 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-sky-500 text-sm">
+                <option value="5000">Up to 5,000 sq ft (Light Commercial / Retail)</option>
+                <option value="15000" selected>5,000 - 15,000 sq ft (Medium Office / Clinic)</option>
+                <option value="50000">15,000 - 50,000 sq ft (Commercial Complex)</option>
+                <option value="100000">50,000+ sq ft (Enterprise Industrial Tower)</option>
+              </select>
+            </div>
+
+            <!-- Step 2: Primary System Type -->
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">2. Primary HVAC System Infrastructure</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="radio" name="system-type" value="rtu" checked class="text-sky-500 focus:ring-sky-500">
+                  <span class="text-xs font-semibold text-slate-200">Rooftop Package Units (RTUs)</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="radio" name="system-type" value="chiller" class="text-sky-500 focus:ring-sky-500">
+                  <span class="text-xs font-semibold text-slate-200">Chilled Water Plant / Towers</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3: Add-on Options -->
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">3. Additional Service Add-ons</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="checkbox" id="addon-bms" class="rounded text-sky-500 focus:ring-sky-500" checked>
+                  <span class="text-xs text-slate-300">BMS Automation & Remote BACnet Monitoring</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="checkbox" id="addon-sla" class="rounded text-sky-500 focus:ring-sky-500" checked>
+                  <span class="text-xs text-slate-300">Quarterly Maintenance SLA Contract</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-800 bg-slate-950/60 cursor-pointer hover:border-slate-700">
+                  <input type="checkbox" id="addon-iaq" class="rounded text-sky-500 focus:ring-sky-500">
+                  <span class="text-xs text-slate-300">MERV 13+ High-Efficiency Air Filtration Retrofit</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Realtime Dynamic Calculation Output -->
+            <div class="p-4 rounded-xl bg-slate-950 border border-sky-500/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <div>
+                <span class="text-slate-400 text-xs block">Estimated Capacity & Monthly Maintenance</span>
+                <span id="estimated-cost-display" class="text-2xl font-extrabold text-sky-400">$450 - $650 / Mo</span>
+                <span id="estimated-tonnage-display" class="text-[11px] text-slate-400 block mt-0.5">Estimated Cooling Load: ~12.5 Tons</span>
+              </div>
+              <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl text-sm transition-colors shadow-lg">
+                Submit Specs for Official RFP
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Form Success Message -->
+          <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-700 text-emerald-300 text-sm">
+            <i class="fa-solid fa-circle-check mr-2"></i> Your commercial inquiry has been dispatched to our engineering desk at <strong>service@alboshvac.com</strong>. We will review your specs and contact you within 2 business hours.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMERCIAL FAQ ACCORDION -->
+  <section class="py-20 bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14 space-y-3">
+        <h2 class="text-3xl font-extrabold text-white">Commercial Client FAQs</h2>
+        <p class="text-slate-400 text-sm">Common questions regarding commercial maintenance SLAs, billing, and BMS integration.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Question 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>What guaranteed response time is included in your Commercial SLA contracts?</span>
+            <i class="fa-solid fa-chevron-down text-sky-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              Contracted commercial clients receive priority dispatch status with a guaranteed under-2-hour response time for critical system failures (such as server room cooling loss or complete building heat failure).
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>Can ALBOS HVAC integrate with our existing Building Management System (BMS)?</span>
+            <i class="fa-solid fa-chevron-down text-sky-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              Yes. Our technicians are certified in BACnet, Modbus, and Tridium Niagara protocols. We can seamlessly service hardware and update sequences of operation on your current BMS without needing a total system replacement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm hover:bg-slate-800/50 transition-colors">
+            <span>How does ALBOS HVAC handle crane service and rooftop unit replacement logistics?</span>
+            <i class="fa-solid fa-chevron-down text-sky-400 transition-transform"></i>
+          </button>
+          <div class="accordion-content px-5 text-slate-400 text-xs leading-relaxed">
+            <p class="pb-5">
+              We handle end-to-end turn-key retrofits: municipal permits, street closure coordination, crane rigging schedules, structural curb adapter fabrication, and off-site equipment staging to minimize downtime for building occupants.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER BANNER -->
+  <section class="py-16 bg-gradient-to-r from-sky-600 via-blue-600 to-sky-700 text-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">Need a Dedicated Commercial Mechanical Partner?</h2>
+      <p class="text-slate-100 max-w-2xl mx-auto text-base">
+        Speak with a senior commercial engineer today to schedule a comprehensive facility audit and mechanical health inspection.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="tel:18005552526" class="px-8 py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-xl shadow-xl text-sm transition-all">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> Call (800) 555-ALBOS
+        </a>
+        <a href="mailto:service@alboshvac.com" class="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-extrabold rounded-xl shadow-xl text-sm transition-all">
+          <i class="fa-solid fa-envelope mr-2 text-sky-600"></i> Email Commercial Desk
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800/80">
+        
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-slate-950 font-black text-base">A</div>
+            <span class="text-lg font-black tracking-tight text-white">ALBOS <span class="text-sky-400">HVAC</span></span>
+          </a>
+          <p class="text-slate-400 leading-relaxed">
+            High-performance commercial mechanical engineering, preventative maintenance contracts, and 24/7 building automation solutions.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Pages</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="residential.html" class="hover:text-white transition-colors">Residential HVAC</a></li>
+            <li><a href="commercial.html" class="text-sky-400 font-bold">Commercial HVAC</a></li>
+            <li><a href="industrial.html" class="hover:text-white transition-colors">Industrial Solutions</a></li>
+            <li><a href="parts.html" class="hover:text-white transition-colors">HVAC Parts & Components</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Company</h4>
+          <ul class="space-y-2.5 font-medium">
+            <li><a href="about.html" class="hover:text-white transition-colors">About ALBOS HVAC</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#estimator" class="hover:text-white transition-colors">Commercial Scope Estimator</a></li>
+            <li><a href="mailto:service@alboshvac.com" class="hover:text-white transition-colors">Submit Commercial RFP</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-[11px]">Direct Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-sky-400"></i>
+              <a href="mailto:service@alboshvac.com" class="hover:text-white">service@alboshvac.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-sky-400"></i>
+              <a href="tel:18005552526" class="hover:text-white">(800) 555-ALBOS</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-sky-400"></i>
+              <span>Commercial Service Division</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+        <p>&copy; <span id="year"></span> ALBOS HVAC. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300">Commercial SLA Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top fixed bottom-6 right-6 p-3 rounded-full bg-sky-500 text-slate-950 shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:bg-sky-400 focus:outline-none" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      /* 1. Mobile Navigation Toggle */
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          nav.classList.toggle('hidden');
+        });
+      }
+
+      /* 2. Interactive Commercial Estimator Logic */
+      var sqftSelect = document.getElementById('sqft-select');
+      var addonBms = document.getElementById('addon-bms');
+      var addonSla = document.getElementById('addon-sla');
+      var addonIaq = document.getElementById('addon-iaq');
+      var costDisplay = document.getElementById('estimated-cost-display');
+      var tonnageDisplay = document.getElementById('estimated-tonnage-display');
+      var radioSystems = document.querySelectorAll('input[name="system-type"]');
+
+      function calculateEstimate() {
+        if (!sqftSelect || !costDisplay) return;
+
+        var sqft = parseInt(sqftSelect.value, 10) || 5000;
+        var tons = (sqft / 400).toFixed(1);
+        
+        var baseMonthly = (sqft / 5000) * 150;
+        
+        var systemMultiplier = 1.0;
+        radioSystems.forEach(function(radio) {
+          if (radio.checked && radio.value === 'chiller') {
+            systemMultiplier = 1.35;
+          }
+        });
+
+        if (addonBms && addonBms.checked) baseMonthly += 100;
+        if (addonSla && addonSla.checked) baseMonthly += 150;
+        if (addonIaq && addonIaq.checked) baseMonthly += 75;
+
+        var minCost = Math.round(baseMonthly * systemMultiplier);
+        var maxCost = Math.round(minCost * 1.3);
+
+        costDisplay.textContent = '$' + minCost.toLocaleString() + ' - $' + maxCost.toLocaleString() + ' / Mo';
+        tonnageDisplay.textContent = 'Estimated Cooling Load: ~' + tons + ' Tons (' + sqft.toLocaleString() + ' sq ft)';
+      }
+
+      if (sqftSelect) {
+        sqftSelect.addEventListener('change', calculateEstimate);
+        radioSystems.forEach(function(r) { r.addEventListener('change', calculateEstimate); });
+        if (addonBms) addonBms.addEventListener('change', calculateEstimate);
+        if (addonSla) addonSla.addEventListener('change', calculateEstimate);
+        if (addonIaq) addonIaq.addEventListener('change', calculateEstimate);
+        calculateEstimate();
+      }
+
+      /* Form Submission Demo */
+      var form = document.getElementById('commercial-estimator-form');
+      var formSuccess = document.getElementById('form-success');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (formSuccess) {
+            formSuccess.classList.remove('hidden');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
+
+      /* 3. FAQ Accordion Logic */
+      var accordions = document.querySelectorAll('.accordion-btn');
+      accordions.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.fa-chevron-down');
+          
+          if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            document.querySelectorAll('.accordion-content').forEach(function(c) { c.classList.remove('active'); });
+            document.querySelectorAll('.accordion-btn .fa-chevron-down').forEach(function(i) { i.style.transform = 'rotate(0deg)'; });
+            content.classList.add('active');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      /* 4. Stat Counter Animation */
+      var counters = document.querySelectorAll('[data-count]');
+      if ('IntersectionObserver' in window && counters.length) {
+        var counterIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var target = parseFloat(el.getAttribute('data-count')) || 0;
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1200;
+            var start = null;
+            function step(ts) {
+              if (!start) start = ts;
+              var progress = Math.min((ts - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+            counterIO.unobserve(el);
+          });
+        }, { threshold: 0.4 });
+        counters.forEach(function (el) { counterIO.observe(el); });
+      }
+
+      /* 5. Back to Top Button */
+      var backToTop = document.querySelector('.back-to-top');
+      if (backToTop) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 400) {
+            backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            backToTop.classList.add('opacity-100');
+          } else {
+            backToTop.classList.add('opacity-0', 'pointer-events-none');
+            backToTop.classList.remove('opacity-100');
+          }
+        });
+        backToTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      /* 6. Dynamic Year */
+      var yearEl = document.querySelector('#year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+
 </body>
 </html>
