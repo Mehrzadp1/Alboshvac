@@ -80,48 +80,39 @@
     </div>
   </div>
 
-  <!-- MAIN STICKY NAVIGATION -->
-  <header class="site-header sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 transition-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        
-        <!-- BRAND LOGO -->
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-blue-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
-            A
-          </div>
-          <div>
-            <span class="text-xl font-black tracking-tight text-white block leading-none">ALBOS <span class="text-sky-400">HVAC</span></span>
-            <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold block mt-1">Commercial & Mechanical</span>
-          </div>
-        </a>
+<!-- Header -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="mark">
+        <img src="assets/logo-icon.svg" alt="Albos HVAC logo" width="46" height="46">
+      </span>
+      <span>Albos HVAC<small>Comfort in Every Season</small></span>
+    </a>
 
-        <!-- DESKTOP NAVIGATION LINKS -->
-        <nav class="hidden lg:block">
-          <ul class="flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
-            <li><a href="index.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Home</a></li>
-            <li><a href="residential.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Residential</a></li>
-            <li><a href="commercial.html" class="px-3 py-2 rounded-lg bg-sky-500/10 text-sky-400 font-semibold border border-sky-500/30">Commercial</a></li>
-            <li><a href="industrial.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Industrial</a></li>
-            <li><a href="parts.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Parts</a></li>
-            <li><a href="about.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">About</a></li>
-            <li><a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a></li>
-          </ul>
-        </nav>
-
-        <!-- CTA BUTTON -->
-        <div class="hidden sm:flex items-center space-x-3">
-          <a href="#estimator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-sky-500/20 transition-all hover:shadow-sky-500/40 text-sm flex items-center gap-2">
-            <i class="fa-solid fa-calculator"></i> Scope Estimator
-          </a>
-        </div>
-
-        <!-- MOBILE NAV TOGGLE -->
-        <button class="nav-toggle lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars text-xl"></i>
-        </button>
-      </div>
+<nav class="main-nav">
+ <ul style="display: flex !important; flex-direction: row !important; list-style: none !important; gap: 24px !important; align-items: center !important; margin: 0 !important; padding: 0 !important;">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="Residential.html" class="nav-link">Residential</a></li>
+    <li><a href="commercial.html" class="nav-link">Commercial</a></li>
+    <li><a href="industrial.html" class="nav-link">Industrial</a></li>
+    <li><a href="parts.html" class="nav-link">Parts</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+    <div class="header-actions">
+      <a href="tel:14088349131" class="phone-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 2-2z"/></svg>
+        <span>(408) 834-9131</span>
+      </a>
+      <a href="contact.html" class="btn btn-primary header-cta">Get a Free Quote</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
+  </div>
+</header>
 
     <!-- MOBILE MENU DROPDOWN -->
     <div class="main-nav hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6">
